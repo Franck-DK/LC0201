@@ -73,15 +73,54 @@ stuList.Add(stu);
 stu = new Student() { name = "dav", age = 19, weight = 170.8, grade = 92.8 };
 stuList.Add(stu);
 
+//lamda expression
+//You need to know how to write a lamda expression
+//lamda expression is a function, a new way to define a function
+
+FunctionType1 fc2;// fc2, complex , 0
+
+fc2 = CheckGrade;
+
+fc2 = CheckAge;
+
+fc2 = (Student a) => { return a.grade>90; }; // () => { },lamda expression, arrow expression
+
+fc2 = a => { return a.grade > 90; }; // in the case of only one parameter you don't need the brackets around a 
+
+fc2 = a => a.grade > 90 ; // When there's only one line of code we don't need the following: return, {} and ;
+
+
+fc2 = (Student b) => { return b.age > 19 && b.grade > 80; };
+
+fc2 = b => b.age > 19 && b.grade > 80;
+
+Console.WriteLine(fc2(stu1));
+
+//
+//
+List<Student> rList;
+rList = stuList.Where((Student c) => { return c.grade>85; }).ToList() ;//where is extension
+
+rList = stuList.Where( c => c.grade > 90 || c.weight>130).ToList();
+
+for (int i = 0; i < rList.Count; i++)
+{
+    Console.WriteLine(rList[i].name);
+    Console.WriteLine(rList[i].age);
+    Console.WriteLine(rList[i].weight);
+    Console.WriteLine(rList[i].grade);
+}
+
+//var 
+//var g1 ; syntax error, var is not a datatype
+var g1 = 96.6;
+//double
+
+var age = 20 + 1;
+
 
 //define a delegate at the end of the code
 delegate bool FunctionType1(Student stu); //we defined a function type
-
-
-
-
-
-
-
-
-
+// functionType1 is a new type
+// function specification
+// EV: 
