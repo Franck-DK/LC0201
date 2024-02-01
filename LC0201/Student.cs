@@ -2,7 +2,7 @@
 {
     public class Student// complex
         {
-        public string Name;
+        public string name;
         public int age;
         public double weight;
         public double grade;
